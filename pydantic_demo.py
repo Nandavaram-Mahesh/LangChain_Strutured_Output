@@ -16,3 +16,15 @@ student = Student(**new_student)
 
 print(student)
 # name='Nandavaram Mahesh' age=29 email='aDkCt@gmail.com' cgpa=5
+
+# Converting from pydantic object to python dict
+student_dict = dict(student)
+print(student_dict['cgpa'])
+# 5
+
+# Converting from pydantic object to json
+student_json = student.model_dump_json()
+print(student_json)
+# {"name":"Nandavaram Mahesh","age":29,"email":"aDkCt@gmail.com","cgpa":5.0}
+
+
