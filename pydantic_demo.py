@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel,EmailStr,Field
 from typing import Optional
 
 # Pydantic is a Data Validation and Serialization/parsing Framework for Python. 
@@ -6,9 +6,11 @@ from typing import Optional
 
 class Student(BaseModel):
     name:str='Nandavaram Mahesh'
-    age:Optional[int]=None    
+    age:Optional[int]=None
+    email:EmailStr
+       
     
-new_student = {'age':29}
+new_student = {'age':29,'email':'aDkCt@gmail.com'}
 
 student = Student(**new_student)    
 
