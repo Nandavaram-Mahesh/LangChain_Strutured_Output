@@ -18,6 +18,31 @@ llm = HuggingFaceEndpoint(
 
 model = ChatHuggingFace(llm=llm)
 
+# ---------------------------------------------------------------------------------------
+# Annotated is a type hint from the typing module in Python, 
+# introduced in Python 3.9. It allows you to add arbitrary metadata to a type hint,
+# while still maintaining the original type information.
+# In other words, Annotated allows you to attach additional information to a type hint, 
+# such as a description, a validation rule, or a transformation function, without changing the underlying type.
+
+# General Syntax
+# MyType = Annotated[OriginalType, Metadata]
+
+# ---------------------------------------------------------------------------------------
+
+# Literal is a type hint from the typing module in Python, 
+# which allows you to specify a type that can only take on a specific set of literal values.
+# In other words, Literal is used to define a type that is restricted to a specific set of values, 
+# such as a set of strings, integers, or booleans.
+
+# General Syntax
+# MyType = Literal[Value1, Value2, ..., ValueN]
+
+# ---------------------------------------------------------------------------------------
+# Optional is a type hint from the typing module in Python, 
+# which indicates that a variable or function parameter can be either a specific type or None.
+# In other words, Optional is used to define a type that can take on either a specific value or no value at all (None).
+
 
 class Review(TypedDict):
 

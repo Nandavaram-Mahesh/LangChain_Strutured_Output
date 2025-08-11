@@ -21,6 +21,35 @@ llm = HuggingFaceEndpoint(
 
 model = ChatHuggingFace(llm=llm)
 
+# Field
+# ---------------------------------------------------------------------------------------------------
+# In Pydantic, Field is a special type that allows you to add additional information to a model's field, 
+# such as a description, a default value, or validation rules.
+
+# When you use Field to define a field in a Pydantic model, 
+# you can pass additional arguments to customize the field's behavior. Here are some common uses of Field:
+
+# Description: Add a human-readable description to the field.
+# Default value: Set a default value for the field if no value is provided.
+# Validation: Add validation rules to the field, such as minimum or maximum length, or a regular expression pattern.
+# Alias: Define an alias for the field, which can be used to access the field by a different name.
+
+# Field(...)
+# ---------------------------------------------------------------------------------------------------
+# In Pydantic, the ... in the Field definition is called an "ellipsis" or " ellipsis literal". 
+# It's a special value that indicates that the field is required.
+# When you use ... as the default value for a field, Pydantic will raise a ValidationError if the field is not provided when creating an instance of the model.
+# In other words, ... is a shorthand way to indicate that the field is required and must be provided.
+
+# class User(BaseModel):
+#     name: str = Field(...)  # name is required
+#     email: str = Field("example@example.com")  # email has a default value
+
+# In this example, the name field is required and must be provided when creating a User instance. 
+# If you try to create a User instance without providing a name, Pydantic will raise a ValidationError.
+# On the other hand, the email field has a default value, so it's not required to be provided when creating a User instance.
+# Using ... instead of None or another default value makes it clear that the field is required and helps Pydantic to enforce this constraint.
+# ---------------------------------------------------------------------------------------------------
 
 # schema
 class Review(BaseModel):

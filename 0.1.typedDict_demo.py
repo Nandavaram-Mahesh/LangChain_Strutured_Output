@@ -1,5 +1,6 @@
 from typing import TypedDict
 
+# It is a way of defining a dictionary with specific types.
 class Drone(TypedDict):
     Category: str
     weight: int
